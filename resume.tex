@@ -1,77 +1,67 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ragged2e}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{xcolor}
 \usepackage{geometry}
-
-\geometry{
-    left=0.75in,
-    right=0.75in,
-    top=0.75in,
-    bottom=0.75in
-}
-
+\geometry{left=0.75in, right=0.75in, top=0.75in, bottom=0.75in}
+\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
     urlcolor=blue,
-    linkcolor=black,
-    citecolor=black
 }
+\usepackage{enumitem}
 
-\pagestyle{empty}
-
+% Custom commands for consistency
 \newcommand{\sectionheader}[1]{
     \vspace{0.1in}
-    \noindent\textbf{\Large #1}
-    \rule{\textwidth}{0.8pt}
-    \vspace{-0.1in}
-}
-
-\newcommand{\entry}[4]{
+    \textbf{\Large #1}
+    \vspace{-0.05in}
+    \hrule
     \vspace{0.05in}
-    \noindent\textbf{#1} \hfill \textbf{#2} \\
-    \textit{#3} \hfill \textit{#4} \\
 }
 
-\newcommand{\skillentry}[2]{
-    \noindent\textbf{#1}: #2 \\
+\newcommand{\entry}[4]{ % Company, Title, Dates, Location
+    \textbf{#1} \hfill \textbf{#3} \\
+    #2 \hfill #4 \\
 }
 
-\setlist[itemize]{
-    itemsep=0pt,
-    parsep=0pt,
-    topsep=2pt,
-    partopsep=0pt,
-    leftmargin=1em
+\newcommand{\projectentry}[3]{ % Project Name, Description, Technologies
+    \textbf{#1} \quad --- \quad #2 \\
+    \textit{Technologies:} #3
 }
 
 \begin{document}
+\pagestyle{empty}
 
+% Header
 \begin{center}
-    {\Huge \textbf{Dhruvil Gajjar}} \\
-    \vspace{2pt}
-    {\Large Frontend Engineer} \\
-    \vspace{4pt}
+    \textbf{\Huge Dhruvil Gajjar} \\
+    \vspace{0.05in}
+    \textbf{Frontend Engineer} \\
+    \vspace{0.05in}
     \small
-    +91\,9512531333 \textbullet\ dgajjar999@gmail.com \textbullet\ \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} \textbullet\ \href{https://github.com/whodhruvil}{GitHub} \textbullet\ \href{https://www.linkedin.com/in/dhruvil-gajjar}{LinkedIn}
+    +919512531333 \textbullet \
+    \href{mailto:dgajjar999@gmail.com}{dgajjar999@gmail.com} \textbullet \
+    \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} \textbullet \
+    \href{https://github.com/whodhruvil}{github.com/whodhruvil} \textbullet \
+    \href{https://www.linkedin.com/in/dhruvil-gajjar}{linkedin.com/in/dhruvil-gajjar}
 \end{center}
 
 \sectionheader{Skills}
-\begin{itemize}
-    \item \skillentry{Frontend Development}{React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack, Next.js, Material UI, Bootstrap, jQuery, React Native, Expo}
-    \item \skillentry{State Management}{Redux, Context API, Hooks}
-    \item \skillentry{Backend Knowledge}{REST APIs, GraphQL, NestJS, Node.js, Express, PHP}
-    \item \skillentry{Tooling \& Deployment}{Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library, Bundle Analyzer}
-    \item \skillentry{Other Skills}{Problem-Solving, Logical Reasoning, OOPs, Agile Development}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,parsep=0pt]
+    \item \textbf{Frontend Development:} React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack, Next.js, Material UI, Bootstrap, jQuery, React Native, Expo
+    \item \textbf{State Management:} Redux, Context API, Hooks
+    \item \textbf{Backend Knowledge:} REST APIs, GraphQL, NestJS, PHP, Node.js, Express, Magento
+    \item \textbf{Tooling \& Deployment:} Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library, Bundle Analyzer
+    \item \textbf{Other Skills:} Problem-Solving, Logical Reasoning, OOP, Agile Development
 \end{itemize}
 
 \sectionheader{Work Experience}
-
-\entry{Sr. Software Engineer}{March 2025 \textemdash PRESENT}{Bacancy}{Ahmedabad, India}
-\begin{itemize}
+\vspace{-0.05in}
+\entry{Bacancy}{Sr. Software Engineer}{March 2025 \textemdash PRESENT}{Ahmedabad, India}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,parsep=0pt]
     \item Engineered the frontend architecture for a real-time IoT vehicle tracking platform, enabling live location monitoring and comprehensive commute data visualization.
     \item Improved application performance by 98\%, reducing load times from 3 minutes to 2 seconds for heavy telemetry datasets by optimizing rendering and data processing pipelines.
     \item Spearheaded the client-side architectural migration from Traccar to Flespi, ensuring seamless data integration and enhancing overall system scalability.
@@ -79,8 +69,8 @@
     \item \textit{Technology Stack:} JavaScript, TypeScript, React, Redux, Jest, Tailwind CSS
 \end{itemize}
 
-\entry{Software Engineer}{October 2021 \textemdash January 2025}{Saleshandy (SaaS)}{Ahmedabad, India}
-\begin{itemize}
+\entry{Saleshandy (SaaS)}{Software Engineer}{October 2021 \textemdash January 2025}{Ahmedabad, India}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,parsep=0pt]
     \item Spearheaded the development of a billing system using React and Stripe, reducing payment errors by 25\% for 3,000+ users.
     \item Enhanced user onboarding by 30\% and retention by 15\% by implementing plan-based restrictions and trial features.
     \item Reduced frontend development time by 60\% across 3+ products by architecting a reusable React component library, ensuring 100\% UI/UX consistency.
@@ -92,35 +82,27 @@
     \item \textit{Technology Stack:} TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library
 \end{itemize}
 
-\entry{Software Engineer}{January 2020 \textemdash October 2021}{Codrain Technolabs Pvt Ltd.}{Ahmedabad, India}
-\begin{itemize}
+\entry{Codrain Technolabs Pvt Ltd.}{Software Engineer}{January 2020 \textemdash October 2021}{Ahmedabad, India}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,parsep=0pt]
     \item Crafted efficient, scalable mobile applications using JavaScript, React Native, and Redux, contributing to enhanced user experiences and system reliability.
     \item Designed and built WalkMapper, a mobile application for Android and iOS, serving over 10,000+ residents in the New York area to report public issues.
-    \item Facilitated streamlined reporting of public issues, including non-functional streetlights, uncleared snow, and faulty traffic signals, enabling a 30\% faster response rate from government authorities and improving community safety.
-    \item \textit{Technology Stack:} JavaScript, PHP, React, React Native, Expo, Redux, Magento
+    \item Facilitated streamlined reporting of public issues, including non-functional streetlights and faulty traffic signals, enabling a 30\% faster response rate from government authorities and improving community safety.
+    \item \textit{Technology Stack:} JavaScript, React, React Native, Expo, Redux
 \end{itemize}
 
 \sectionheader{Education}
-\entry{Bachelor of Engineering \textemdash INFORMATION TECHNOLOGY}{August 2016 \textemdash August 2020}{Gyanmanjari Innovative University}{Bhavnagar, India}
-\begin{itemize}
+\vspace{-0.05in}
+\entry{Gyanmanjari Innovative University}{Bachelor of Engineering - Information Technology}{August 2016 \textemdash August 2020}{Bhavnagar, India}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,parsep=0pt]
     \item CGPA: 8.38 / 10.0
 \end{itemize}
 
 \sectionheader{Projects}
-
-\noindent\textbf{FakeTwitter}
-\begin{itemize}
-    \item Developed a Twitter-like platform with features for posting, liking, and commenting on tweets using React.js, Semantic UI, and Apollo Client, Node.js, MongoDB, and GraphQL via Apollo Server.
-\end{itemize}
-
-\noindent\textbf{iMovie}
-\begin{itemize}
-    \item Developed an interactive movie library website using Next.js, Tailwind CSS, and the TMDB API, featuring over 1,500+ films organized by genre, enhancing user engagement.
-\end{itemize}
-
-\noindent\textbf{GeekyBot}
-\begin{itemize}
-    \item Developed a voice-command news web application utilizing React, Material UI, and Alan AI for seamless voice interaction; integrated NEWSAPI.org to deliver real-time updates with 90\% accuracy in content delivery.
+\vspace{-0.05in}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt,parsep=0pt]
+    \item \projectentry{FakeTwitter}{Developed a Twitter-like platform with features for posting, liking, and commenting on tweets.}{React.js, Semantic UI, Apollo Client, Node.js, MongoDB, GraphQL via Apollo Server}
+    \item \projectentry{iMovie}{Developed an interactive movie library website featuring over 1,500+ films organized by genre, enhancing user engagement.}{Next.js, Tailwind CSS, TMDB API}
+    \item \projectentry{GeekyBot}{Developed a voice-command news web application for seamless voice interaction, integrated NEWSAPI.org to deliver real-time updates with 90\% accuracy in content delivery.}{React, Material UI, Alan AI, NEWSAPI.org}
 \end{itemize}
 
 \end{document}
