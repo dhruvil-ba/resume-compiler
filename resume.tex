@@ -1,62 +1,85 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{ragged2e}
-\usepackage{geometry}
-\geometry{left=0.75in, right=0.75in, top=0.75in, bottom=0.75in}
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
-\usepackage{titlesec}
-\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{1ex plus .2ex}
-\titlespacing*{\subsection}{0pt}{1.2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\geometry{
+    left=0.75in,
+    right=0.75in,
+    top=0.75in,
+    bottom=0.75in
+}
+
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
-    filecolor=magenta,
     urlcolor=blue,
+    linkcolor=black,
+    citecolor=black
 }
-\usepackage{xcolor}
 
-\titleformat{\section}{\vspace{-1.5ex}\Large\bfseries\raggedright}{}{0em}{}[\vspace{-0.5ex}\rule{\linewidth}{0.8pt}]
-\titleformat{\subsection}{\vspace{-1ex}\large\bfseries\raggedright}{}{0em}{}
-
-\begin{document}
 \pagestyle{empty}
 
+\newcommand{\sectionheader}[1]{
+    \vspace{0.1in}
+    \noindent\textbf{\Large #1}
+    \rule{\textwidth}{0.8pt}
+    \vspace{-0.1in}
+}
+
+\newcommand{\entry}[4]{
+    \vspace{0.05in}
+    \noindent\textbf{#1} \hfill \textbf{#2} \\
+    \textit{#3} \hfill \textit{#4} \\
+}
+
+\newcommand{\skillentry}[2]{
+    \noindent\textbf{#1}: #2 \\
+}
+
+\setlist[itemize]{
+    itemsep=0pt,
+    parsep=0pt,
+    topsep=2pt,
+    partopsep=0pt,
+    leftmargin=1em
+}
+
+\begin{document}
+
 \begin{center}
-    \Huge\bfseries Dhruvil Gajjar \\[0.5ex]
-    \normalsize Frontend Engineer \\[0.5ex]
+    {\Huge \textbf{Dhruvil Gajjar}} \\
+    \vspace{2pt}
+    {\Large Frontend Engineer} \\
+    \vspace{4pt}
     \small
-    \href{tel:+919512531333}{+919512531333} \textbullet{}
-    \href{mailto:dgajjar999@gmail.com}{dgajjar999@gmail.com} \textbullet{}
-    \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} \textbullet{}
-    \href{https://github.com/whodhruvil}{github.com/whodhruvil} \textbullet{}
-    \href{https://linkedin.com/in/dhruvil-gajjar}{linkedin.com/in/dhruvil-gajjar}
+    +91\,9512531333 \textbullet\ dgajjar999@gmail.com \textbullet\ \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} \textbullet\ \href{https://github.com/whodhruvil}{GitHub} \textbullet\ \href{https://www.linkedin.com/in/dhruvil-gajjar}{LinkedIn}
 \end{center}
 
-\section*{Skills}
-\begin{itemize}[label={}]
-    \item \textbf{Frontend Development:} React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack
-    \item \textbf{Frameworks \& Libraries:} Next.js, Material UI, Bootstrap, jQuery, React Native, Node.js, Express, NestJS, Magento, Expo
-    \item \textbf{State Management:} Redux, Context API, Hooks
-    \item \textbf{Backend Knowledge:} REST APIs, GraphQL, NestJS, PHP
-    \item \textbf{Tooling \& Deployment:} Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library
-    \item \textbf{Other Skills:} Problem-Solving, Logical Reasoning, OOPs, Agile Development
+\sectionheader{Skills}
+\begin{itemize}
+    \item \skillentry{Frontend Development}{React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack, Next.js, Material UI, Bootstrap, jQuery, React Native, Expo}
+    \item \skillentry{State Management}{Redux, Context API, Hooks}
+    \item \skillentry{Backend Knowledge}{REST APIs, GraphQL, NestJS, Node.js, Express, PHP}
+    \item \skillentry{Tooling \& Deployment}{Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library, Bundle Analyzer}
+    \item \skillentry{Other Skills}{Problem-Solving, Logical Reasoning, OOPs, Agile Development}
 \end{itemize}
 
-\section*{Work Experience}
+\sectionheader{Work Experience}
 
-\subsection*{\textbf{Sr. Software Engineer} \hfill \textbf{Bacancy}}
-\textit{Ahmedabad, India} \hfill \textit{March 2025 -- PRESENT}
+\entry{Sr. Software Engineer}{March 2025 \textemdash PRESENT}{Bacancy}{Ahmedabad, India}
 \begin{itemize}
     \item Engineered the frontend architecture for a real-time IoT vehicle tracking platform, enabling live location monitoring and comprehensive commute data visualization.
     \item Improved application performance by 98\%, reducing load times from 3 minutes to 2 seconds for heavy telemetry datasets by optimizing rendering and data processing pipelines.
     \item Spearheaded the client-side architectural migration from Traccar to Flespi, ensuring seamless data integration and enhancing overall system scalability.
     \item Built dynamic analytical dashboards featuring custom trip and stop calculators, delivering granular reports on exact locations, timestamps, average speeds, and route metrics.
-    \item \textit{Technology Stack: JavaScript, TypeScript, JAVA, React, Django, Stripe, Redux, Jest, Tailwind CSS}
+    \item \textit{Technology Stack:} JavaScript, TypeScript, React, Redux, Jest, Tailwind CSS
 \end{itemize}
 
-\subsection*{\textbf{Software Engineer} \hfill \textbf{Saleshandy (SaaS)}}
-\textit{Ahmedabad, India} \hfill \textit{October 2021 -- January 2025}
+\entry{Software Engineer}{October 2021 \textemdash January 2025}{Saleshandy (SaaS)}{Ahmedabad, India}
 \begin{itemize}
     \item Spearheaded the development of a billing system using React and Stripe, reducing payment errors by 25\% for 3,000+ users.
     \item Enhanced user onboarding by 30\% and retention by 15\% by implementing plan-based restrictions and trial features.
@@ -66,37 +89,36 @@
     \item Optimized build processes by integrating Bundle Analyzer to identify large packages and reduce bundle size.
     \item Improved application performance and reduced load time by implementing Web Workers for offloading intensive tasks to background threads.
     \item Demonstrated backend development capabilities by building simple CRUD REST APIs using NestJS, contributing to full-stack project success.
-    \item \textit{Technology Stack: TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library}
+    \item \textit{Technology Stack:} TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library
 \end{itemize}
 
-\subsection*{\textbf{Software Engineer} \hfill \textbf{Codrain Technolabs Pvt Ltd.}}
-\textit{Ahmedabad, India} \hfill \textit{January 2020 -- October 2021}
+\entry{Software Engineer}{January 2020 \textemdash October 2021}{Codrain Technolabs Pvt Ltd.}{Ahmedabad, India}
 \begin{itemize}
     \item Crafted efficient, scalable mobile applications using JavaScript, React Native, and Redux, contributing to enhanced user experiences and system reliability.
     \item Designed and built WalkMapper, a mobile application for Android and iOS, serving over 10,000+ residents in the New York area to report public issues.
     \item Facilitated streamlined reporting of public issues, including non-functional streetlights, uncleared snow, and faulty traffic signals, enabling a 30\% faster response rate from government authorities and improving community safety.
-    \item \textit{Technology Stack: JavaScript, PHP, React, React Native, Expo, Redux, Magento}
+    \item \textit{Technology Stack:} JavaScript, PHP, React, React Native, Expo, Redux, Magento
 \end{itemize}
 
-\section*{Education}
-\subsection*{\textbf{Bachelor of Engineering - INFORMATION TECHNOLOGY} \hfill \textbf{Gyanmanjari Innovative University}}
-\textit{Bhavnagar, India} \hfill \textit{August 2016 -- August 2020}
+\sectionheader{Education}
+\entry{Bachelor of Engineering \textemdash INFORMATION TECHNOLOGY}{August 2016 \textemdash August 2020}{Gyanmanjari Innovative University}{Bhavnagar, India}
 \begin{itemize}
     \item CGPA: 8.38 / 10.0
 \end{itemize}
 
-\section*{Projects}
-\subsection*{\textbf{FakeTwitter}}
+\sectionheader{Projects}
+
+\noindent\textbf{FakeTwitter}
 \begin{itemize}
     \item Developed a Twitter-like platform with features for posting, liking, and commenting on tweets using React.js, Semantic UI, and Apollo Client, Node.js, MongoDB, and GraphQL via Apollo Server.
 \end{itemize}
 
-\subsection*{\textbf{iMovie}}
+\noindent\textbf{iMovie}
 \begin{itemize}
     \item Developed an interactive movie library website using Next.js, Tailwind CSS, and the TMDB API, featuring over 1,500+ films organized by genre, enhancing user engagement.
 \end{itemize}
 
-\subsection*{\textbf{GeekyBot}}
+\noindent\textbf{GeekyBot}
 \begin{itemize}
     \item Developed a voice-command news web application utilizing React, Material UI, and Alan AI for seamless voice interaction; integrated NEWSAPI.org to deliver real-time updates with 90\% accuracy in content delivery.
 \end{itemize}
