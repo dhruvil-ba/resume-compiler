@@ -1,103 +1,91 @@
-% !TEX program = xelatex
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{russell}
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\setmainfont{Helvetica}
+\setsansfont{Helvetica}
+\setmonofont{Courier}
 
-% Specify the location of the included fonts
-\fontdir[fonts/]
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 
-% Color for highlights
-% russell Colors: russell-emerald, russell-skyblue, russell-red, russell-pink, russell-orange
-%                 russell-nephritis, russell-concrete, russell-darknight, russell-purple
-\colorlet{russell}{russell-black}
-% Uncomment if you would like to specify your own color
-% \definecolor{russell}{HTML}{CA63A8}
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
-
-% Set false if you don't want to highlight section with russell color
-\setbool{acvSectionColorHighlight}{true}
-
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-% \photo[rectangle,edge,right]{./examples/profile}
-\name{Dhruvil}{Gajjar}
-% \position{Software Architect{\enskip\cdotp\enskip}Security Expert}
-\address{Frontend Engineer}
-
-\mobile{+919512531333}
-\email{dgajjar999@gmail.com}
-%\dateofbirth{January 1st, 1970}
-\homepage{dhruvilgajjar.netlify.app} 
-\github{whodhruvil}
-\linkedin{dhruvil-gajjar}
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \medium{madium-id}
-% \kaggle{kaggle-id}
-% \googlescholar{googlescholar-id}{name-to-display}
-%% \firstname and \lastname will be used
-% \googlescholar{googlescholar-id}{}
-% \extrainfo{extra information}
-
-% \quote{``Simplicity is deceptively complicated."}
-
-
-%-------------------------------------------------------------------------------
- %	BIBLIOGRAPHY
- %-------------------------------------------------------------------------------
-\addbibresource{cv/references.bib}
-
-%-------------------------------------------------------------------------------
 \begin{document}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
+\thispagestyle{empty}
+\pagestyle{empty}
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-% \makecvfooter
-%   % {\today}
-%   {}
-%   {\thepage}
+\begin{center}
+    \huge{\textbf{Dhruvil Gajjar}} \\
+    \vspace{1em}
+    \large{Frontend Engineer} \\
+    \vspace{1em}
+    \large{\href{tel:+919512531333}{+91 95125 31333} | \href{mailto:dgajjar999@gmail.com}{dgajjar999@gmail.com} | \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} | \href{https://whodhruvil.com}{whodhruvil} | \href{https://dhruvil-gajjar.com}{dhruvil-gajjar}}
+\end{center}
 
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
-% \input{cv/summary.tex}
-\input{cv/skills.tex}
-\input{cv/experience.tex}
-\input{cv/education.tex}
-\input{cv/projects.tex}
-% \input{cv/achievements.tex}
-% \input{cv/publications.tex}
-% \input{cv/interests.tex}
-% \input{cv/languages.tex}
+\vspace{2em}
 
-\vspace*{\fill}
-% \centering{\textbf{References available upon request.}}
-%-------------------------------------------------------------------------------
+\section*{Skills}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Frontend Development: React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack
+    \item Frameworks \& Libraries: Next.js, Material UI, Bootstrap, jQuery, React Native, Node.js, Express, NestJS, Magento, Expo
+    \item State Management: Redux, Context API, Hooks
+    \item Backend Knowledge: REST APIs, GraphQL, NestJS, PHP
+    \item Tooling \& Deployment: Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library
+    \item Other Skills: Problem-Solving, Logical Reasoning, OOPs, Agile Development
+\end{itemize}
+
+\vspace{2em}
+
+\section*{Work Experience}
+\subsection*{Sr. Software Engineer, Bacancy (March 2025 - Present)}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Engineered the frontend architecture for a real-time IoT vehicle tracking platform, enabling live location monitoring and comprehensive commute data visualization
+    \item Improved application performance by 98\%, reducing load times from 3 minutes to 2 seconds for heavy telemetry datasets by optimizing rendering and data processing pipelines
+    \item Spearheaded the client-side architectural migration from Traccar to Flespi, ensuring seamless data integration and enhancing overall system scalability
+    \item Built dynamic analytical dashboards featuring custom trip and stop calculators, delivering granular reports on exact locations, times-tamps, average speeds, and route metrics
+    \item Technology Stack: JavaScript, TypeScript, JAVA, React, Django, Stripe, Redux, Jest, Tailwind CSS
+\end{itemize}
+
+\subsection*{Software Engineer, Saleshandy (SaaS) (October 2021 - January 2025)}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Spearheaded the development of a billing system using React and Stripe, reducing payment errors by 25\% for 3,000+ users
+    \item Enhanced user onboarding by 30\% and retention by 15\% by implementing plan-based restrictions and trial features
+    \item Reduced frontend development time by 60\% across 3+ products by architecting a reusable React component library, ensuring 100\% UI/UX consistency
+    \item Automated CI/CD pipelines for the component library, enabling 100\% auto-deployments on NPM with seamless versioning
+    \item Engineered interactive analytics reports using ApexCharts, delivering up to 50\% faster insights and enhancing user engagement by 20\%
+    \item Optimized build processes by integrating Bundle Analyzer to identify large packages and reduce bundle size
+    \item Improved application performance and reduced load time by implementing Web Workers for offloading intensive tasks to background threads
+    \item Demonstrated backend development capabilities by building simple CRUD REST APIs using NestJS, contributing to full-stack project success
+    \item Technology Stack: TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library
+\end{itemize}
+
+\subsection*{Software Engineer, Codrain Technolabs Pvt Ltd. (January 2020 - October 2021)}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Crafted efficient, scalable mobile applications using JavaScript, React Native, and Redux contributing to enhanced user experiences and system reliability
+    \item Designed and built WalkMapper, a mobile application for Android and iOS, serving over 10,000+ residents in the New York area to report public issues
+    \item Facilitated streamlined reporting of public issues, including non-functional streetlights, uncleared snow, and faulty traffic signals, enabling a 30\% faster response rate from government authorities and improving community safety
+    \item Technology Stack: JavaScript, PHP, React, React Native, Expo, Redux, Magento
+\end{itemize}
+
+\vspace{2em}
+
+\section*{Education}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item Bachelor of Engineering - INFORMATION TECHNOLOGY, Gyanmanjari Innovative University (August 2016 - August 2020)
+    \item CGPA: 8.38 / 10.0
+\end{itemize}
+
+\vspace{2em}
+
+\section*{Projects}
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+    \item FakeTwitter: Developed a Twitter-like platform with features for posting, liking, and commenting on tweets using React.js, Semantic UI, and Apollo Client, Node.js, MongoDB, and GraphQL via Apollo Server
+    \item iMovie: Developed an interactive movie library website using Next.js, Tailwind CSS, and the TMDB API, featuring over 1,500+ films organized by genre, enhancing user engagement
+    \item GeekyBot: Developed a voice-command news web application utilizing React, Material UI, and Alan AI for seamless voice interaction; integrated NEWSAPI.org to deliver real-time updates with 90\% accuracy in content delivery
+\end{itemize}
+
 \end{document}
-    
