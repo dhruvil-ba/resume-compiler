@@ -1,55 +1,145 @@
 \documentclass[letterpaper,10pt]{article}
-\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in,
+    headheight=0pt,
+    headsep=0pt,
+    footskip=0pt
+}
+\usepackage{enumitem}
 \usepackage{ragged2e}
 \usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{tabularx}
-
-% Set margins
-\usepackage[left=0.75in, right=0.75in, top=0.75in, bottom=0.75in]{geometry}
-
-% Remove page numbers
-\pagestyle{empty}
-
-% Section formatting
-\titleformat{\section}{
-  \vspace{-4pt}\raggedright\Large\bfseries
-}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
-
-% Hyperlink styling
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
     urlcolor=blue,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black
+}
+\usepackage{titlesec}
+
+\titleformat{\section}{
+  \vspace{-1em}\normalfont\Large\bfseries\color{black}
+}{}{0em}{\MakeUppercase}
+[\titlerule]
+
+\newcommand{\resumeitem}[1]{
+    \item \small #1
 }
 
-% Custom commands for entries
-\newcommand{\resumeheading}[1]{
-  \vspace{-10pt}
-  \begin{center}
-    \Huge\textbf{#1}
-  \end{center}
+\newcommand{\resumesubheading}[4]{
+    \vspace{-0.5em}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-0.5em}
 }
 
-\newcommand{\resumetitle}[1]{
-  \vspace{-5pt}
-  \begin{center}
-    \large #1
-  \end{center}
+\newcommand{\resumesubsubheading}[2]{
+    \vspace{-0.5em}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{#1} & \textit{#2} \\
+    \end{tabular*}\vspace{-0.5em}
 }
 
-\newcommand{\contactinfo}[1]{
-  \vspace{-5pt}
-  \begin{center}
-    \small #1
-  \end{center}
-  \vspace{-10pt}
+\newcommand{\resumesubsubitem}[1]{
+    \item \small #1
 }
 
-\newcommand{\experienceentry}[5]{
-  \vspace{4pt}
-  \noindent\textbf{#1} \hfill \textbf{#2} \\
-  \noindent\textit{#3} \hfill \textit{#4}
-  \begin{itemize}[leftmargin=0.15in, labelwidth=\widthof{\textbullet}, labelsep=0.1in, itemsep=0
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+    {\Huge\textbf{Dhruvil Gajjar}} \\
+    \vspace{0.1em}
+    \textbf{Frontend Engineer} \\
+    \vspace{0.2em}
+    \small
+    +919512531333 \textperiodcentered\ dgajjar999@gmail.com \textperiodcentered\ \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} \textperiodcentered\ \href{https://github.com/whodhruvil}{GitHub} \textperiodcentered\ \href{https://www.linkedin.com/in/dhruvil-gajjar}{LinkedIn}
+\end{center}
+
+\section*{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \item \small
+    \textbf{Frontend Development:} React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack, Next.js, Material UI, Bootstrap, jQuery, React Native, Expo
+    \item \small
+    \textbf{State Management:} Redux, Context API, Hooks
+    \item \small
+    \textbf{Backend Knowledge:} REST APIs, GraphQL, Node.js, Express, NestJS, PHP
+    \item \small
+    \textbf{Tooling \& Deployment:} Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library, Bundle Analyzer
+    \item \small
+    \textbf{Other:} Problem-Solving, Logical Reasoning, OOPs, Agile Development
+\end{itemize}
+
+\section*{Work Experience}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \resumesubheading{Bacancy}{Ahmedabad, India}
+    {\textit{Sr. Software Engineer}}{March 2025 \textemdash PRESENT}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{Engineered the frontend architecture for a real-time IoT vehicle tracking platform, enabling live location monitoring and comprehensive commute data visualization.}
+        \resumeitem{Improved application performance by \textbf{98\%}, reducing load times from 3 minutes to 2 seconds for heavy telemetry datasets by optimizing rendering and data processing pipelines.}
+        \resumeitem{Spearheaded the client-side architectural migration from Traccar to Flespi, ensuring seamless data integration and enhancing overall system scalability.}
+        \resumeitem{Built dynamic analytical dashboards featuring custom trip and stop calculators, delivering granular reports on exact locations, timestamps, average speeds, and route metrics.}
+        \resumeitem{\textit{Technology Stack:} JavaScript, TypeScript, React, Redux, Jest, Tailwind CSS}
+    \end{itemize}
+
+    \resumesubheading{Saleshandy (SaaS)}{Ahmedabad, India}
+    {\textit{Software Engineer}}{October 2021 \textemdash January 2025}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{Spearheaded the development of a billing system using React and Stripe, reducing payment errors by \textbf{25\%} for 3,000+ users.}
+        \resumeitem{Enhanced user onboarding by \textbf{30\%} and retention by \textbf{15\%} by implementing plan-based restrictions and trial features.}
+        \resumeitem{Reduced frontend development time by \textbf{60\%} across 3+ products by architecting a reusable React component library, ensuring 100\% UI/UX consistency.}
+        \resumeitem{Automated CI/CD pipelines for the component library, enabling \textbf{100\%} auto-deployments on NPM with seamless versioning.}
+        \resumeitem{Engineered interactive analytics reports using ApexCharts, delivering up to \textbf{50\%} faster insights and enhancing user engagement by \textbf{20\%}.}
+        \resumeitem{Optimized build processes by integrating Bundle Analyzer to identify large packages and reduce bundle size.}
+        \resumeitem{Improved application performance and reduced load time by implementing Web Workers for offloading intensive tasks to background threads.}
+        \resumeitem{Demonstrated backend development capabilities by building simple CRUD REST APIs using NestJS, contributing to full-stack project success.}
+        \resumeitem{\textit{Technology Stack:} TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library}
+    \end{itemize}
+
+    \resumesubheading{Codrain Technolabs Pvt Ltd.}{Ahmedabad, India}
+    {\textit{Software Engineer}}{January 2020 \textemdash October 2021}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{Crafted efficient, scalable mobile applications using JavaScript, React Native, and Redux, contributing to enhanced user experiences and system reliability.}
+        \resumeitem{Designed and built WalkMapper, a mobile application for Android and iOS, serving over \textbf{10,000+} residents in the New York area to report public issues.}
+        \resumeitem{Facilitated streamlined reporting of public issues, including non-functional streetlights, uncleared snow, and faulty traffic signals, enabling a \textbf{30\%} faster response rate from government authorities and improving community safety.}
+        \resumeitem{\textit{Technology Stack:} JavaScript, React, React Native, Expo, Redux}
+    \end{itemize}
+\end{itemize}
+
+\section*{Education}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \resumesubheading{Gyanmanjari Innovative University}{Bhavnagar, India}
+    {\textit{Bachelor of Engineering - INFORMATION TECHNOLOGY}}{August 2016 \textemdash August 2020}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{CGPA: 8.38 / 10.0}
+    \end{itemize}
+\end{itemize}
+
+\section*{Projects}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \resumesubsubheading{FakeTwitter}{}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{Developed a Twitter-like platform with features for posting, liking, and commenting on tweets using React.js, Semantic UI, Apollo Client, Node.js, MongoDB, and GraphQL via Apollo Server.}
+    \end{itemize}
+    \resumesubsubheading{iMovie}{}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{Developed an interactive movie library website using Next.js, Tailwind CSS, and the TMDB API, featuring over \textbf{1,500+} films organized by genre, enhancing user engagement.}
+    \end{itemize}
+    \resumesubsubheading{GeekyBot}{}
+    \begin{itemize}[leftmargin=0.15in, label={$\cdot$}]
+        \resumeitem{Developed a voice-command news web application utilizing React, Material UI, and Alan AI for seamless voice interaction; integrated NEWSAPI.org to deliver real-time updates with \textbf{90\%} accuracy in content delivery.}
+    \end{itemize}
+\end{itemize}
+
+\end{document}
