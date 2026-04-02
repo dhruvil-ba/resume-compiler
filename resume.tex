@@ -1,91 +1,139 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{fontspec}
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=0.7in,
+    bottom=0.7in,
+    left=0.7in,
+    right=0.7in,
+    headheight=0pt,
+    footskip=0pt
+}
+\usepackage{titlesec}
+\usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{titlesec}
+\usepackage{fontawesome5}
 
-\setmainfont{Helvetica}
-\setsansfont{Helvetica}
-\setmonofont{Courier}
+% Define colors
+\definecolor{primary}{HTML}{0056B3} % A shade of blue
+\definecolor{graytext}{HTML}{4A4A4A}
 
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+% Section formatting
+\titleformat{\section}{
+    \vspace{-0.1in}\raggedright\Large\bfseries\color{primary}
+}{}{0em}{}[\vspace{-0.1in}\rule{\linewidth}{0.8pt}]
+\titlespacing*{\section}{0pt}{0.1in}{0.1in}
+
+% Custom list for experience
+\newlist{resumeitems}{itemize}{1}
+\setlist[resumeitems]{
+    label=\textbullet,
+    leftmargin=1.5em,
+    itemsep=0.2em,
+    parsep=0em,
+    topsep=0.2em,
+    partopsep=0em
+}
+
+% Custom list for skills
+\newlist{skilllist}{itemize}{1}
+\setlist[skilllist]{
+    label={},
+    leftmargin=1.5em,
+    itemsep=0em,
+    parsep=0em,
+    topsep=0em,
+    partopsep=0em
+}
+
+% Hyperlink styling
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    filecolor=primary,
+    urlcolor=primary,
+    citecolor=primary,
+}
+
+\pagestyle{empty} % No page numbers
 
 \begin{document}
 
-\thispagestyle{empty}
-\pagestyle{empty}
-
+% Header
 \begin{center}
-    \huge{\textbf{Dhruvil Gajjar}} \\
-    \vspace{1em}
-    \large{Frontend Engineer} \\
-    \vspace{1em}
-    \large{\href{tel:+919512531333}{+91 95125 31333} | \href{mailto:dgajjar999@gmail.com}{dgajjar999@gmail.com} | \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} | \href{https://whodhruvil.com}{whodhruvil} | \href{https://dhruvil-gajjar.com}{dhruvil-gajjar}}
+    \textbf{\Huge Dhruvil Gajjar} \\
+    \vspace{2pt}
+    \large Frontend Engineer \\
+    \vspace{4pt}
+    \small
+    \faPhone\ +919512531333 \quad \textbar \quad
+    \faEnvelope\ \href{mailto:dgajjar999@gmail.com}{dgajjar999@gmail.com} \quad \textbar \quad
+    \faGlobe\ \href{https://dhruvilgajjar.netlify.app}{dhruvilgajjar.netlify.app} \quad \textbar \quad
+    \faGithub\ \href{https://github.com/whodhruvil}{whodhruvil} \quad \textbar \quad
+    \faLinkedin\ \href{https://www.linkedin.com/in/dhruvil-gajjar}{dhruvil-gajjar}
 \end{center}
 
-\vspace{2em}
-
 \section*{Skills}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item Frontend Development: React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack
-    \item Frameworks \& Libraries: Next.js, Material UI, Bootstrap, jQuery, React Native, Node.js, Express, NestJS, Magento, Expo
-    \item State Management: Redux, Context API, Hooks
-    \item Backend Knowledge: REST APIs, GraphQL, NestJS, PHP
-    \item Tooling \& Deployment: Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library
-    \item Other Skills: Problem-Solving, Logical Reasoning, OOPs, Agile Development
-\end{itemize}
-
-\vspace{2em}
+\begin{skilllist}
+    \item \textbf{Frontend Development:} React.js, Redux, JavaScript, TypeScript, HTML5, CSS3, SCSS, Tailwind CSS, Styled Components, Webpack
+    \item \textbf{Frameworks \& Libraries:} Next.js, Material UI, Bootstrap, jQuery, React Native, Node.js, Express, NestJS, Magento, Expo
+    \item \textbf{State Management:} Redux, Context API, Hooks
+    \item \textbf{Backend Knowledge:} REST APIs, GraphQL, NestJS, PHP
+    \item \textbf{Tooling \& Deployment:} Git, CI/CD, Figma, Storybook, Sentry, Jest, React Testing Library
+    \item \textbf{Other Skills:} Problem-Solving, Logical Reasoning, OOPs, Agile Development
+\end{skilllist}
 
 \section*{Work Experience}
-\subsection*{Sr. Software Engineer, Bacancy (March 2025 - Present)}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item Engineered the frontend architecture for a real-time IoT vehicle tracking platform, enabling live location monitoring and comprehensive commute data visualization
-    \item Improved application performance by 98\%, reducing load times from 3 minutes to 2 seconds for heavy telemetry datasets by optimizing rendering and data processing pipelines
-    \item Spearheaded the client-side architectural migration from Traccar to Flespi, ensuring seamless data integration and enhancing overall system scalability
-    \item Built dynamic analytical dashboards featuring custom trip and stop calculators, delivering granular reports on exact locations, times-tamps, average speeds, and route metrics
-    \item Technology Stack: JavaScript, TypeScript, JAVA, React, Django, Stripe, Redux, Jest, Tailwind CSS
-\end{itemize}
 
-\subsection*{Software Engineer, Saleshandy (SaaS) (October 2021 - January 2025)}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item Spearheaded the development of a billing system using React and Stripe, reducing payment errors by 25\% for 3,000+ users
-    \item Enhanced user onboarding by 30\% and retention by 15\% by implementing plan-based restrictions and trial features
-    \item Reduced frontend development time by 60\% across 3+ products by architecting a reusable React component library, ensuring 100\% UI/UX consistency
-    \item Automated CI/CD pipelines for the component library, enabling 100\% auto-deployments on NPM with seamless versioning
-    \item Engineered interactive analytics reports using ApexCharts, delivering up to 50\% faster insights and enhancing user engagement by 20\%
-    \item Optimized build processes by integrating Bundle Analyzer to identify large packages and reduce bundle size
-    \item Improved application performance and reduced load time by implementing Web Workers for offloading intensive tasks to background threads
-    \item Demonstrated backend development capabilities by building simple CRUD REST APIs using NestJS, contributing to full-stack project success
-    \item Technology Stack: TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library
-\end{itemize}
+\textbf{Sr. Software Engineer} \hfill \textbf{March 2025 -- PRESENT} \\
+\textbf{Bacancy} \hfill Ahmedabad, India
+\begin{resumeitems}
+    \item Engineered the frontend architecture for a real-time IoT vehicle tracking platform, enabling live location monitoring and comprehensive commute data visualization.
+    \item Improved application performance by \textbf{98\%}, reducing load times from 3 minutes to 2 seconds for heavy telemetry datasets by optimizing rendering and data processing pipelines.
+    \item Spearheaded the client-side architectural migration from Traccar to Flespi, ensuring seamless data integration and enhancing overall system scalability.
+    \item Built dynamic analytical dashboards featuring custom trip and stop calculators, delivering granular reports on exact locations, timestamps, average speeds, and route metrics.
+    \item \textit{Technology Stack:} JavaScript, TypeScript, JAVA, React, Django, Stripe, Redux, Jest, Tailwind CSS
+\end{resumeitems}
 
-\subsection*{Software Engineer, Codrain Technolabs Pvt Ltd. (January 2020 - October 2021)}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item Crafted efficient, scalable mobile applications using JavaScript, React Native, and Redux contributing to enhanced user experiences and system reliability
-    \item Designed and built WalkMapper, a mobile application for Android and iOS, serving over 10,000+ residents in the New York area to report public issues
-    \item Facilitated streamlined reporting of public issues, including non-functional streetlights, uncleared snow, and faulty traffic signals, enabling a 30\% faster response rate from government authorities and improving community safety
-    \item Technology Stack: JavaScript, PHP, React, React Native, Expo, Redux, Magento
-\end{itemize}
+\textbf{Software Engineer} \hfill \textbf{October 2021 -- January 2025} \\
+\textbf{Saleshandy (SaaS)} \hfill Ahmedabad, India
+\begin{resumeitems}
+    \item Spearheaded the development of a billing system using React and Stripe, reducing payment errors by \textbf{25\%} for 3,000+ users.
+    \item Enhanced user onboarding by \textbf{30\%} and retention by \textbf{15\%} by implementing plan-based restrictions and trial features.
+    \item Reduced frontend development time by \textbf{60\%} across 3+ products by architecting a reusable React component library, ensuring \textbf{100\%} UI/UX consistency.
+    \item Automated CI/CD pipelines for the component library, enabling \textbf{100\%} auto-deployments on NPM with seamless versioning.
+    \item Engineered interactive analytics reports using ApexCharts, delivering up to \textbf{50\%} faster insights and enhancing user engagement by \textbf{20\%}.
+    \item Optimized build processes by integrating Bundle Analyzer to identify large packages and reduce bundle size.
+    \item Improved application performance and reduced load time by implementing Web Workers for offloading intensive tasks to background threads.
+    \item Demonstrated backend development capabilities by building simple CRUD REST APIs using NestJS, contributing to full-stack project success.
+    \item \textit{Technology Stack:} TypeScript, JavaScript, ReactJS, Stripe, Redux, HTML, CSS, SCSS, NestJS, Figma, Jest, React Testing Library
+\end{resumeitems}
 
-\vspace{2em}
+\textbf{Software Engineer} \hfill \textbf{January 2020 -- October 2021} \\
+\textbf{Codrain Technolabs Pvt Ltd.} \hfill Ahmedabad, India
+\begin{resumeitems}
+    \item Crafted efficient, scalable mobile applications using JavaScript, React Native, and Redux, contributing to enhanced user experiences and system reliability.
+    \item Designed and built WalkMapper, a mobile application for Android and iOS, serving over \textbf{10,000+} residents in the New York area to report public issues.
+    \item Facilitated streamlined reporting of public issues, including non-functional streetlights, uncleared snow, and faulty traffic signals, enabling a \textbf{30\%} faster response rate from government authorities and improving community safety.
+    \item \textit{Technology Stack:} JavaScript, PHP, React, React Native, Expo, Redux, Magento
+\end{resumeitems}
 
 \section*{Education}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item Bachelor of Engineering - INFORMATION TECHNOLOGY, Gyanmanjari Innovative University (August 2016 - August 2020)
-    \item CGPA: 8.38 / 10.0
-\end{itemize}
-
-\vspace{2em}
+\textbf{Bachelor of Engineering - INFORMATION TECHNOLOGY} \hfill \textbf{August 2016 -- August 2020} \\
+\textbf{Gyanmanjari Innovative University} \hfill Bhavnagar, India \\
+CGPA: 8.38 / 10.0
 
 \section*{Projects}
-\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
-    \item FakeTwitter: Developed a Twitter-like platform with features for posting, liking, and commenting on tweets using React.js, Semantic UI, and Apollo Client, Node.js, MongoDB, and GraphQL via Apollo Server
-    \item iMovie: Developed an interactive movie library website using Next.js, Tailwind CSS, and the TMDB API, featuring over 1,500+ films organized by genre, enhancing user engagement
-    \item GeekyBot: Developed a voice-command news web application utilizing React, Material UI, and Alan AI for seamless voice interaction; integrated NEWSAPI.org to deliver real-time updates with 90\% accuracy in content delivery
-\end{itemize}
+\begin{resumeitems}
+    \item \textbf{FakeTwitter:} Developed a Twitter-like platform with features for posting, liking, and commenting on tweets using React.js, Semantic UI, and Apollo Client, Node.js, MongoDB, and GraphQL via Apollo Server.
+    \item \textbf{iMovie:} Developed an interactive movie library website using Next.js, Tailwind CSS, and the TMDB API, featuring over 1,500+ films organized by genre, enhancing user engagement.
+    \item \textbf{GeekyBot:} Developed a voice-command news web application utilizing React, Material UI, and Alan AI for seamless voice interaction; integrated NEWSAPI.org to deliver real-time updates with \textbf{90\%} accuracy in content delivery.
+\end{resumeitems}
 
 \end{document}
